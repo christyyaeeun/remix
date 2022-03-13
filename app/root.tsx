@@ -1,0 +1,35 @@
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "remix";
+import "react-widgets/styles.css";
+import type { MetaFunction } from "remix";
+import { Link } from "react-router-dom";
+
+export const meta: MetaFunction = () => {
+  return { title: "New Remix App" };
+};
+
+export default function App() {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <li><Link to="/posts">Posts</Link></li>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
